@@ -1,90 +1,57 @@
-# Jumping Spyder
+Jumping Spyder
+🚀 Overview
+Jumping Spyder is a JavaScript-powered Telegram bot for Solana traders.
+It delivers real-time sentiment signals, token tracking, and premium features unlocked via on-chain SOL balance checks.
 
-## Overview
+Built with Telegraf + Solana wallet integration, it’s designed for speed, simplicity, and trader-focused insights.
 
-**Jumpy** is a JavaScript powered Telegram bot for crypto traders, focused on Solana. It provides real-time sentiment signals, lets users track tokens, and manages premium access using Solana wallet balances. The bot is built with [Telegraf](https://telegraf.js.org/) and integrates with Solana via deterministic wallet generation.
+✨ Features
+📥 Onboarding – /start greets users with interactive inline buttons.
 
----
+📡 Live Signals – /getsignals subscribes users to curated crypto alpha feeds.
 
-## Features
+🔍 Token Tracking – /track_token (e.g., /track SOL) for focused sentiment alerts.
 
-- **Start & Onboarding:**  
-  `/start` welcomes users and presents main actions via inline buttons.
+💬 Help & Feedback – /help and /feedback for guidance & bug reports.
 
-- **Get Signals:**  
-  `/getsignals` or the "Get Signals" button subscribes users to live trading signals from curated sources.
+⚙ Settings Preview – /settings for upcoming customization options.
 
-- **Track Token:**  
-  `/track_token` or the "Track Token" button lets users specify a token (e.g., `/track SOL`) to receive focused sentiment alerts.
+💰 Premium Access via Solana Wallet – /subscribe generates a unique Solana public key for each user, checks SOL balance, and unlocks premium features on deposit.
 
-- **Help & Feedback:**  
-  `/help` and `/feedback` provide detailed instructions and a way to send suggestions or bug reports.
+📂 Key Files
+jumping_spyder/bot.js → Main Telegram bot commands & logic
 
-- **Settings:**  
-  `/settings` previews upcoming customization features.
+jumping_spyder/solana/paymentGate.js → Deterministic Solana wallet generation & balance checks
 
-- **Solana Wallet Integration:**  
-  `/subscribe` generates a unique Solana public key for each user (based on their Telegram user ID) and checks their SOL balance. Users must deposit SOL to unlock premium features.
+🛠 Usage
+bash
+Copy
+Edit
+# 1️⃣ Install dependencies
+npm install
 
----
+# 2️⃣ Configure .env
+# Fill in Telegram token, X API key, Solana mnemonic, etc.
 
-## Key Files
+# 3️⃣ Run the bot
+node jumping_spyder/bot.js
+🔑 Environment Variables
+BOT_TOKEN → Telegram bot token
 
-- [`bot.js`](jumping_spyder/bot.js):  
-  Main Telegram bot logic, commands, and responses.
+MNEMONIC → Solana wallet mnemonic
 
-- [`solana/paymentGate.js`](jumping_spyder/solana/paymentGate.js):  
-  Handles deterministic Solana wallet generation and balance checks.
+TELEGRAM_CHANNEL_ID → Target channel/user for alerts
 
----
+(Optional) API keys for Twitter/OpenAI integrations
 
-## Usage
+🎯 Example: Premium Unlock
+When a user sends /subscribe:
 
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+A unique Solana public key is derived from their Telegram user ID.
 
-2. **Configure environment:**
-   - Copy `.env.example` to `.env` and fill in your secrets (Telegram token, X Api Key, Solana mnemonic, etc.). Set the accounts you want to follow and you are set!
+SOL balance is checked on-chain.
 
-3. **Run the bot:**
-   ```bash
-   node jumping_spyder/bot.js
-   ```
+Access is granted if balance meets premium threshold.
 
----
-
-## Example: Solana Wallet Subscription
-
-When a user sends `/subscribe`, the bot:
-1. Derives a unique Solana public key from their Telegram user ID.
-2. Checks the SOL balance for that key.
-3. Replies with the public key and subscription status (based on balance).
-
----
-
-## Extending
-
-- Add new commands by extending the `responses` object and registering new `bot.command` or `bot.action` handlers in [`bot.js`](jumping_spyder/bot/bot.js).
-- Wallet logic can be extended in [`paymentGate.js`](jumping_spyder/solana/paymentGate.js) for more advanced payment or on-chain features.
-
----
-
-## Environment Variables
-
-See `.env` for required configuration:
-- `BOT_TOKEN` — Telegram bot token
-- `MNEMONIC` — Solana wallet mnemonic
-- `TELEGRAM_CHANNEL_ID` — Channel/user for alerts
-- (and others for Twitter/OpenAI integration)
----
-
-## Demo
-WIP version available at: https://t.me/jumpys_bot.
-
-## License
-
-MIT License © 2025 Jumping Spyder
-
----
+📜 License
+MIT License © 2025 — Adapted & extended for Brunel Hack 25 submission.
