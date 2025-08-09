@@ -1,32 +1,34 @@
-Jumping Spyder
-🚀 Overview
-Jumping Spyder is a JavaScript-powered Telegram bot for Solana traders.
-It delivers real-time sentiment signals, token tracking, and premium features unlocked via on-chain SOL balance checks.
+# Jumping Spyder
 
-Built with Telegraf + Solana wallet integration, it’s designed for speed, simplicity, and trader-focused insights.
+## 🚀 Overview
+**Jumping Spyder** is a JavaScript-powered Telegram bot for **Solana** traders.  
+It delivers **real-time sentiment signals**, token tracking, and premium features unlocked via **on-chain SOL balance checks**.  
 
-✨ Features
-📥 Onboarding – /start greets users with interactive inline buttons.
+Built with [Telegraf](https://telegraf.js.org/) + Solana wallet integration, it’s designed for speed, simplicity, and trader-focused insights.  
 
-📡 Live Signals – /getsignals subscribes users to curated crypto alpha feeds.
+---
 
-🔍 Token Tracking – /track_token (e.g., /track SOL) for focused sentiment alerts.
+## ✨ Features
 
-💬 Help & Feedback – /help and /feedback for guidance & bug reports.
+- **📥 Onboarding** – `/start` greets users with interactive inline buttons.  
+- **📡 Live Signals** – `/getsignals` subscribes users to curated crypto alpha feeds.  
+- **🔍 Token Tracking** – `/track_token` (e.g., `/track SOL`) for focused sentiment alerts.  
+- **💬 Help & Feedback** – `/help` and `/feedback` for guidance & bug reports.  
+- **⚙ Settings Preview** – `/settings` for upcoming customization options.  
+- **💰 Premium Access via Solana Wallet** – `/subscribe` generates a **unique Solana public key** for each user, checks SOL balance, and unlocks premium features on deposit.  
 
-⚙ Settings Preview – /settings for upcoming customization options.
+---
 
-💰 Premium Access via Solana Wallet – /subscribe generates a unique Solana public key for each user, checks SOL balance, and unlocks premium features on deposit.
+## 📂 Key Files
 
-📂 Key Files
-jumping_spyder/bot.js → Main Telegram bot commands & logic
+- `jumping_spyder/bot.js` → Main Telegram bot commands & logic  
+- `jumping_spyder/solana/paymentGate.js` → Deterministic Solana wallet generation & balance checks  
 
-jumping_spyder/solana/paymentGate.js → Deterministic Solana wallet generation & balance checks
+---
 
-🛠 Usage
-bash
-Copy
-Edit
+## 🛠 Usage
+
+```bash
 # 1️⃣ Install dependencies
 npm install
 
@@ -55,3 +57,4 @@ Access is granted if balance meets premium threshold.
 
 📜 License
 MIT License © 2025 — Adapted & extended for Brunel Hack 25 submission.
+
